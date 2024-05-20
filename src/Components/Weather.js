@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './Weather.css'
+import './Weather.css';
+
+
 const Weather = () => {
     //To hold the weather data
     const [weatherData, setWeatherData] = useState(null);
@@ -7,10 +9,10 @@ const Weather = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
   
-    const API_KEY = process.env.API_KEY;
+    const API_KEY = process.env.REACT_APP_API_KEY;
     //New York coordinates
     const lat = '40.7128';
-    const lon = '-74.0060';
+    const long = '-74.0060';
   
     //now use useffect hook to fetch weather data 
     useEffect(() => {
@@ -18,10 +20,10 @@ const Weather = () => {
         try {
             //Get request for the API Key and coordinates
           const response = await fetch(
-            `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&appid=${API_KEY}&units=metric`
+            `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${long}&exclude=minutely,hourly,alerts&appid=${API_KEY}&units=metric`
           );
           if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error('Network response is not ok');
           }
           const data = await response.json();
           setWeatherData(data);
@@ -33,7 +35,7 @@ const Weather = () => {
       };
       //Call the fetchWeather function
       fetchWeather();
-    }, [lat, lon, API_KEY]);
+    }, [lat, long, API_KEY]);
   
     if (loading) {
       return <div>Loading...</div>;
@@ -64,3 +66,4 @@ const Weather = () => {
   };
   
   export default Weather;
+//  console.log('API_KEY:', process.env.API_KEY)
