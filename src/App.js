@@ -3,6 +3,16 @@ import './App.css';
 // import './Components/Weather'
 import Weather from './Components/Weather';
 
+function App() {
+  return (
+    <div className="App">
+      <Weather />
+    </div>
+  );
+}
+
+export default App;
+
 // const API_KEY = process.env.API_KEY
 // //Need to add Latitude and Longitude coordinates with this API
 // const lat = ''
@@ -27,13 +37,4 @@ import Weather from './Components/Weather';
 //   </div>
 // );
 
-function App() {
-  return(
-    <div className='App'>
-      <Weather/>
 
-    </div>
-  )
-}
-
-export default App;

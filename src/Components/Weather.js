@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import './Weather.css';
 
@@ -9,10 +10,11 @@ const Weather = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
   
-    const API_KEY = process.env.REACT_APP_API_KEY;
+    const API_KEY= process.env.REACT_APP_API_KEY;
     //New York coordinates
-    const lat = '40.7128';
-    const long = '-74.0060';
+    // const lat = '42.3478';
+    // const lon = '-71.0466';
+
   
     //now use useffect hook to fetch weather data 
     useEffect(() => {
@@ -20,7 +22,7 @@ const Weather = () => {
         try {
             //Get request for the API Key and coordinates
           const response = await fetch(
-            `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${long}&exclude=minutely,hourly,alerts&appid=${API_KEY}&units=metric`
+            `https://api.tomorrow.io/v4/weather/forecast?location=42.3478,-71.0466&apikey=${API_KEY}`
           );
           if (!response.ok) {
             throw new Error('Network response is not ok');
@@ -35,7 +37,8 @@ const Weather = () => {
       };
       //Call the fetchWeather function
       fetchWeather();
-    }, [lat, long, API_KEY]);
+    }, [API_KEY]);
+  
   
     if (loading) {
       return <div>Loading...</div>;
@@ -66,4 +69,5 @@ const Weather = () => {
   };
   
   export default Weather;
-//  console.log('API_KEY:', process.env.API_KEY)
+
+// //  console.log('API_KEY:', process.env.API_KEY)
