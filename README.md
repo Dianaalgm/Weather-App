@@ -1,3 +1,19 @@
+# Weather Application
+
+This is a simple React application that fetches and displays weather information using the Tomorrow.io API. Initially, the project used the OpenWeather API, but due to issues with fetching data, the Tomorrow.io API was implemented successfully.
+
+Troubleshooting
+Initial Issues with OpenWeather API
+Initially, the application used the OpenWeather API to fetch weather data for New York City. However, due to persistent issues with fetching and displaying data, I switched to the Tomorrow.io API, which provided more reliable data retrieval.
+
+Using Tomorrow.io API
+The Tomorrow.io API was successfully integrated and allowed for displaying current weather and daily forecasts for Boston.
+
+Future Improvements
+Added more detailed weather information such as wind speed, humidity, and precipitation.
+Implement a search feature to get weather data for different locations.
+Enhance error handling and user feedback.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
