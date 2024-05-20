@@ -2,11 +2,15 @@
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
     padding: 20px;
+    border: solid black;
+    background-color: rgb(142, 193, 241)
 };
 .currentWeather, .dailyWeather{
     margin: 20px;
+    /* border: solid black */
 };
 
 .day{
     margin: 10px;
+    /* border: solid black */
 };
