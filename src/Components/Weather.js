@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import './Weather.css'
 const Weather = () => {
     //To hold the weather data
     const [weatherData, setWeatherData] = useState(null);
@@ -44,14 +44,14 @@ const Weather = () => {
     }
   
     return (
-      <div className="weather-container">
+      <div className="weatherContainer">
         <h1>Weather Information</h1>
-        <div className="current-weather">
+        <div className="currentWeather">
           <h2>Current Weather In New York City</h2>
           <p>Temperature: {weatherData.current.temp}°C</p>
           <p>Weather: {weatherData.current.weather[0].description}</p>
         </div>
-        <div className="daily-weather">
+        <div className="dailyWeather">
           <h2>Daily Forecast</h2>
           {weatherData.daily.map((day, index) => (
             <div key={index} className="day">

@@ -1,0 +1,12 @@
+.weatherContainer{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 20px;
+};
+.currentWeather, .dailyWeather{
+    margin: 20px;
+};
+
+.day{
+    margin: 10px;
+};
